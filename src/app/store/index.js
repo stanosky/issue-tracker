@@ -9,12 +9,12 @@ import * as sagas from "./sagas";
 const sagaMiddleware = createSagaMiddleware();
 
 export const store = createStore(
-    reducer,
-    applyMiddleware(createLogger(), sagaMiddleware)
+  reducer,
+  applyMiddleware(createLogger(), sagaMiddleware)
 );
 
 for (let saga in sagas) {
-    sagaMiddleware.run(sagas[saga]);
+  sagaMiddleware.run(sagas[saga]);
 }
 
 store.dispatch(requestData());

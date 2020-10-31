@@ -10,25 +10,21 @@ import { history } from "./store/history";
 const renderRoute = (Component) => ({ match }) => <Component match={match} />;
 
 export const App = () => (
-    <Router history={history}>
-        <Provider store={store}>
-            <div className="container mt-3">
-                <Route
-                    exact
-                    path="/dashboard"
-                    render={renderRoute(DashboardContainer)}
-                />
-                <Route
-                    exact
-                    path="/issue/:id"
-                    render={renderRoute(UpdateIssueContainer)}
-                />
-                <Route
-                    exact
-                    path="/new"
-                    render={renderRoute(CreateIssueContainer)}
-                />
-            </div>
-        </Provider>
-    </Router>
+  <Router history={history}>
+    <Provider store={store}>
+      <div className="container mt-3">
+        <Route
+          exact
+          path="/dashboard"
+          render={renderRoute(DashboardContainer)}
+        />
+        <Route
+          exact
+          path="/issue/:id"
+          render={renderRoute(UpdateIssueContainer)}
+        />
+        <Route exact path="/new" render={renderRoute(CreateIssueContainer)} />
+      </div>
+    </Provider>
+  </Router>
 );
