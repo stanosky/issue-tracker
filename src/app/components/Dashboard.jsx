@@ -1,10 +1,11 @@
 import React from "react";
+import {IssueListContainer} from '../containers/IssueListContainer';
 
 export const Dashboard = ({ groups }) => (
     <div>
         <div>
             {groups.map((group) => (
-                <div>{group.id}</div>
+                <IssueListContainer key={group.id} {...group} />
             ))}
         </div>
     </div>
