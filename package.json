@@ -1,0 +1,19 @@
+{
+  "name": "issue-tracker",
+  "version": "1.0.0",
+  "description": "Very simple issue tracker FE + BE",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stanosky/issue-tracker.git"
+  },
+  "author": "Krzysztof Stano",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stanosky/issue-tracker/issues"
+  },
+  "homepage": "https://github.com/stanosky/issue-tracker#readme"
+}
