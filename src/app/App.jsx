@@ -8,7 +8,7 @@ import { history } from "./store/history";
 export const App = () => (
     <Router history={history}>
         <Provider store={store}>
-            <div>
+            <div className="container mt-3">
                 <Route
                     exact
                     path="/dashboard"
