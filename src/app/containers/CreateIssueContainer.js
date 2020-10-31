@@ -1,5 +1,5 @@
 import { IssueDetail } from "../components/IssueDetail";
-import { requestTaskCreation } from "../store/actions";
+import { requestIssueCreation } from "../store/actions";
 import { connect } from "react-redux";
 
 function mapStateToProps(state) {
@@ -15,12 +15,12 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        onUpdateTask: ({ group, name, desc }) =>
-            dispatch(requestTaskCreation({ group, name, desc })),
+        onUpdateIssue: ({ group, name, desc }) =>
+            dispatch(requestIssueCreation({ group, name, desc })),
     };
 }
 
-export const IssueDetailContainer = connect(
+export const CreateIssueContainer = connect(
     mapStateToProps,
     mapDispatchToProps
 )(IssueDetail);

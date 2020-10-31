@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import { SET_STATE, CREATE_ISSUE } from "./consts";
+import { SET_STATE, CREATE_ISSUE, UPDATE_ISSUE } from "./consts";
 
 let defaultState = {
     groups: [],
@@ -28,6 +28,17 @@ export const reducer = combineReducers({
                         desc: action.desc,
                     },
                 ];
+            case UPDATE_ISSUE:
+                return issues.map((issue) => {
+                    return issue.id === action.id
+                        ? {
+                            ...issue,
+                            name: action.name,
+                            group: action.group,
+                            desc: action.desc,
+                        }
+                        : issue;
+                });
         }
         return issues;
     },

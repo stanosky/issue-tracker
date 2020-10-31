@@ -6,8 +6,9 @@ import { history } from "./history";
 import {
     REQUEST_DATA,
     REQUEST_ISSUE_CREATION,
+    REQUEST_ISSUE_UPDATE,
 } from "./consts";
-import { setState, createTask } from "./actions";
+import { setState, createIssue, updateIssue } from "./actions";
 const url = "http://localhost:7777";
 
 export function* issueCreationSaga() {
@@ -15,7 +16,19 @@ export function* issueCreationSaga() {
         try {
             const { name, group, desc } = yield take(REQUEST_ISSUE_CREATION);
             const id = v4();
-            yield put(createTask(id, group, name, desc));
+            yield put(createIssue(id, group, name, desc));
+            history.push("/dashboard");
+        } catch (e) {
+            console.log(e);
+        }
+    }
+}
+
+export function* issueUpdateSaga() {
+    while (true) {
+        try {
+            const issue = yield take(REQUEST_ISSUE_UPDATE);
+            yield put(updateIssue(issue));
             history.push("/dashboard");
         } catch (e) {
             console.log(e);

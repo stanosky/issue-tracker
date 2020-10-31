@@ -2,7 +2,8 @@ import React from "react";
 import { Route, Router } from "react-router-dom";
 import { Provider } from "react-redux";
 import { DashboardContainer } from "./containers/DashboardContainer";
-import { IssueDetailContainer } from "./containers/IssueDetailContainer";
+import { CreateIssueContainer } from "./containers/CreateIssueContainer";
+import { UpdateIssueContainer } from "./containers/UpdateIssueContainer";
 import { store } from "./store";
 import { history } from "./store/history";
 
@@ -19,8 +20,13 @@ export const App = () => (
                 />
                 <Route
                     exact
+                    path="/issue/:id"
+                    render={renderRoute(UpdateIssueContainer)}
+                />
+                <Route
+                    exact
                     path="/new"
-                    render={renderRoute(IssueDetailContainer)}
+                    render={renderRoute(CreateIssueContainer)}
                 />
             </div>
         </Provider>

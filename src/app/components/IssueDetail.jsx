@@ -9,26 +9,26 @@ export class IssueDetail extends React.PureComponent {
             name: props.issue.name,
             desc: props.issue.desc,
         };
-        this.setTaskGroup = this.setTaskGroup.bind(this);
-        this.setTaskName = this.setTaskName.bind(this);
-        this.setTaskDesc = this.setTaskDesc.bind(this);
+        this.setIssueGroup = this.setIssueGroup.bind(this);
+        this.setIssueName = this.setIssueName.bind(this);
+        this.setIssueDesc = this.setIssueDesc.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
     }
 
-    setTaskGroup(e) {
+    setIssueGroup(e) {
         this.setState({ group: e.target.value });
     }
 
-    setTaskName(e) {
+    setIssueName(e) {
         this.setState({ name: e.target.value });
     }
 
-    setTaskDesc(e) {
+    setIssueDesc(e) {
         this.setState({ desc: e.target.value });
     }
 
     onSubmit() {
-        this.props.onUpdateTask(this.state);
+        this.props.onUpdateIssue(this.state);
     }
 
     render() {
@@ -40,21 +40,21 @@ export class IssueDetail extends React.PureComponent {
                     <input
                         type="text"
                         value={this.state.name}
-                        onChange={this.setTaskName}
+                        onChange={this.setIssueName}
                         className="form-control form-control-lg"
                     />
                 </div>
                 <div>
                     <span className="mr-4">Description:</span>
                     <textarea
-                        onChange={this.setTaskDesc}
+                        onChange={this.setIssueDesc}
                         defaultValue={this.state.desc}
                         className="form-control form-control-lg"
                     />
                 </div>
 
                 <span className="mr-4">Status: </span>
-                <select onChange={this.setTaskGroup} className="form-control">
+                <select onChange={this.setIssueGroup} className="form-control">
                     {groups.map((group) => (
                         <option
                             key={group.id}
