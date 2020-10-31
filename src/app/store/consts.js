@@ -1,2 +1,4 @@
+export const REQUEST_TASK_CREATION = "REQUEST_TASK_CREATION";
 export const REQUEST_DATA = "REQUEST_DATA";
+export const CREATE_TASK = "CREATE_TASK";
 export const SET_STATE = "SET_STATE";

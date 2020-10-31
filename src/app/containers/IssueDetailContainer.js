@@ -1,4 +1,5 @@
 import { IssueDetail } from "../components/IssueDetail";
+import { requestTaskCreation } from "../store/actions";
 import { connect } from "react-redux";
 
 function mapStateToProps(state) {
@@ -15,7 +16,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return {
         onUpdateTask: ({ group, name, desc }) =>
-            console.log("new issue props: ", group, name, desc),
+            dispatch(requestTaskCreation({ group, name, desc })),
     };
 }
 
