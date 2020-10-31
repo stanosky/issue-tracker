@@ -1,19 +1,19 @@
 import {
-    REQUEST_TASK_CREATION,
+    REQUEST_ISSUE_CREATION,
     REQUEST_DATA,
-    CREATE_TASK,
+    CREATE_ISSUE,
     SET_STATE,
 } from "./consts";
 
 export const requestTaskCreation = ({ name, group, desc }) => ({
-    type: REQUEST_TASK_CREATION,
+    type: REQUEST_ISSUE_CREATION,
     name,
     group,
     desc,
 });
 
 export const createTask = (id, group, name, desc) => ({
-    type: CREATE_TASK,
+    type: CREATE_ISSUE,
     id,
     name,
     group,

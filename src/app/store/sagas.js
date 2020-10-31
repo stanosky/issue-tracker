@@ -5,7 +5,7 @@ import axios from "axios";
 import { history } from "./history";
 import {
     REQUEST_DATA,
-    REQUEST_TASK_CREATION,
+    REQUEST_ISSUE_CREATION,
 } from "./consts";
 import { setState, createTask } from "./actions";
 const url = "http://localhost:7777";
@@ -13,7 +13,7 @@ const url = "http://localhost:7777";
 export function* issueCreationSaga() {
     while (true) {
         try {
-            const { name, group, desc } = yield take(REQUEST_TASK_CREATION);
+            const { name, group, desc } = yield take(REQUEST_ISSUE_CREATION);
             const id = v4();
             yield put(createTask(id, group, name, desc));
             history.push("/dashboard");

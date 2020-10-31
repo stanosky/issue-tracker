@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import { SET_STATE, CREATE_TASK } from "./consts";
+import { SET_STATE, CREATE_ISSUE } from "./consts";
 
 let defaultState = {
     groups: [],
@@ -18,7 +18,7 @@ export const reducer = combineReducers({
         switch (action.type) {
             case SET_STATE:
                 return action.state.issues;
-            case CREATE_TASK:
+            case CREATE_ISSUE:
                 return [
                     ...issues,
                     {
