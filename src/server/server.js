@@ -1,7 +1,9 @@
 import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
-import {defaultState} from './default-state';
+
+import "./initialize-db";
+import { getData } from "./communicate-db";
 
 let port = 7777;
 let app = express();
@@ -13,7 +15,3 @@ app.post("/data", async (req, res) => {
     let state = await getData();
     res.send({ state });
 });
-
-const getData = async () => {
-    return defaultState;
-}
