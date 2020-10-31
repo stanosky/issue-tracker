@@ -36,6 +36,9 @@ export function* issueUpdateSaga() {
     while (true) {
         try {
             const issue = yield take(REQUEST_ISSUE_UPDATE);
+            yield axios.post(url + "/issue/update", {
+                issue,
+            });
             yield put(updateIssue(issue));
             history.push("/dashboard");
         } catch (e) {

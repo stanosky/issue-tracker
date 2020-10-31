@@ -3,7 +3,7 @@ import cors from "cors";
 import bodyParser from "body-parser";
 
 import "./initialize-db";
-import { getData, addNewIssue } from "./communicate-db";
+import { getData, addNewIssue, updateIssue } from "./communicate-db";
 
 let port = 7777;
 let app = express();
@@ -18,5 +18,10 @@ app.post("/data", async (req, res) => {
 
 app.post("/issue/new", async (req, res) => {
     await addNewIssue(req.body.issue);
+    res.status(200).send();
+});
+
+app.post("/issue/update", async (req, res) => {
+    await updateIssue(req.body.issue);
     res.status(200).send();
 });

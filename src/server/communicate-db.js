@@ -14,3 +14,18 @@ export const getData = async () => {
         issues: await db.collection("issues").find({}).toArray(),
     };
 };
+
+export const updateIssue = async (issue) => {
+    let { id, group, name, desc } = issue;
+    let db = await connectDB();
+    let collection = db.collection("issues");
+    if (group) {
+        await collection.updateOne({ id }, { $set: { group } });
+    }
+    if (name) {
+        await collection.updateOne({ id }, { $set: { name } });
+    }
+    if (desc) {
+        await collection.updateOne({ id }, { $set: { desc } });
+    }
+};
