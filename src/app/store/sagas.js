@@ -16,6 +16,14 @@ export function* issueCreationSaga() {
         try {
             const { name, group, desc } = yield take(REQUEST_ISSUE_CREATION);
             const id = v4();
+            yield axios.post(url + "/issue/new", {
+                issue: {
+                    id,
+                    group,
+                    name,
+                    desc,
+                },
+            });
             yield put(createIssue(id, group, name, desc));
             history.push("/dashboard");
         } catch (e) {
