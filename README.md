@@ -1,4 +1,20 @@
-# issue-tracker
+# Simple issue tracker
+
+## Installation & running
+
+First, install [MongoDB](https://docs.mongodb.com/manual/installation/) and [Node.js](https://nodejs.org/en/download/)
+
+Next, clone this repository and run following command:
+
+```
+npm install
+```
+
+Make sure the MongoDb is up and running in the background and run command below:
+
+```
+npm start
+```
 
 ## Foreword
 
