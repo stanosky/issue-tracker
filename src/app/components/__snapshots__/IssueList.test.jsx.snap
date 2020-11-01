@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IssueList should render without errors 1`] = `
+<div
+  className="col-md-4 card p-2 mt-2"
+>
+  <h2>
+    group 1
+  </h2>
+  <div>
+    <IssueListItem
+      desc="desc 1"
+      group="group 1"
+      id="id 1"
+      key="id 1"
+      name="name 1"
+    />
+    <IssueListItem
+      desc="desc 2"
+      group="group 1"
+      id="id 2"
+      key="id 2"
+      name="name 2"
+    />
+  </div>
+</div>
+`;
