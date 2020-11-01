@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IssueDetail should render without errors 1`] = `
+<div
+  className="card p-3 col-6"
+>
+  <div>
+    <span
+      className="mr-4"
+    >
+      Title:
+    </span>
+    <input
+      className="form-control form-control-lg"
+      onChange={[Function]}
+      type="text"
+      value="name"
+    />
+  </div>
+  <div>
+    <span
+      className="mr-4"
+    >
+      Description:
+    </span>
+    <textarea
+      className="form-control form-control-lg"
+      defaultValue="desc"
+      onChange={[Function]}
+    />
+  </div>
+  <span
+    className="mr-4"
+  >
+    Status: 
+  </span>
+  <select
+    className="form-control"
+    onChange={[Function]}
+  >
+    <option
+      defaultValue={true}
+      disabled={false}
+      key="g1"
+      value="g1"
+    >
+      test 1
+    </option>
+    <option
+      defaultValue={false}
+      disabled={false}
+      key="g2"
+      value="g2"
+    >
+      test 2
+    </option>
+  </select>
+  <div>
+    <button
+      className="btn btn-primary mt-2"
+      onClick={[Function]}
+    >
+      Save
+    </button>
+    <Link
+      replace={false}
+      to="/dashboard"
+    >
+      <button
+        className="btn mt-2"
+      >
+        Cancel
+      </button>
+    </Link>
+  </div>
+</div>
+`;
